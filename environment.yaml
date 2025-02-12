@@ -1,0 +1,10 @@
+channels:
+  - conda-forge
+  - bioconda
+  - hcc
+dependencies:
+  - snakemake-minimal >=8.4.4
+  - bcftools =1.19
+  - samtools =1.19.2
+  - ont-modkit >= 0.4
+  - dorado =0.7.2
