@@ -24,7 +24,7 @@ Create a dedicated folder and download package source files via git clone.
 ```
 $ mkdir MitSorter
 $ cd MitSorter/
-$ git clone https://github.com/asvarvara/MitSorter
+$ git clone https://github.com/asvarvara/MitSorter.git
 ```
 
 ### Configure needed tools
@@ -75,7 +75,9 @@ This workflow generates the following files:
 
 ##  📌  Additional info
 
-MitSorter has been tested on an HPC Cluster platform and requires GPU usage, as the first step of the pipeline, basecalling with [dorado](https://github.com/nanoporetech/dorado) is computationally intensive. We strongly recommend processing one sample at a time. However, if the personal computing environment  supports multiple GPUs, the workflow can be parallelized the workflow  by simply specifying multiple samples in a list within the *config.yaml* file (e.g. samples = ["HG002", "HG003"]).
+MitSorter has been tested on an HPC Cluster platform and requires GPU usage, as the first step of the pipeline, basecalling with [dorado](https://github.com/nanoporetech/dorado) is computationally intensive. We strongly recommend processing one sample at a time. 
+<br/>
+However, if the personal computing environment  supports multiple GPUs, the workflow can be parallelized the workflow by simply specifying multiple samples in a list within the *config.yaml* file (e.g. samples : [HG002, HG003]).
 <br/>
 
 Recommended requirements (one sample):
@@ -84,11 +86,14 @@ Recommended requirements (one sample):
 + CPUs = 64
 + Memory = 128GB
 
-Tested on the recently released [HG002](https://labs.epi2me.io/giab-2025.01/) Genome In A Bottle sample and is downlodable *via* aws (aws s3 cp s3://ont-open-data/giab_2025.01/flowcells/HG002 ~/HG002/ --recursive --no-sign-request). Feel free to tweak the settings following your specific needs.
+Tested on the recently released [HG002](https://labs.epi2me.io/giab-2025.01/) Genome In A Bottle sample and is downlodable *via* aws (s3://ont-open-data/giab_2025.01/flowcells/HG002). Feel free to tweak the settings following your specific needs.
 <br/>
 You can specify the number of cores via the *--cores* flag to the snakemake command.
 <br/>
 <br/>
-The workflow uses the latest available version of Dorado for the Conda environment (dorado-0.7.2, https://anaconda.org/HCC/dorado/files) for basecalling, together with the most recent modified basecalling models (sup v5.0.0) to achieve optimal accuracy for following variant calling. However, this configuration may  introduce computational slowdowns. A significant speed-up in the basecalling step can be achieved by switching to the (hac 4.3.0) models without leading   differences in terms of  discrimination between methulated and unmethylated reads. This modification can be implemented by adjusting the model specification in the second rule of the *Snakefile*.
+The workflow uses the latest available version of Dorado for the Conda environment (dorado-0.7.2, https://anaconda.org/HCC/dorado/files) for basecalling, together with the most recent modified basecalling models (sup v5.0.0) to achieve optimal accuracy for following variant calling. 
 <br/>
-Both pairs of models are provided in the repository and you can find them inside the *data* folder.
+However, this configuration may introduce computational slowdowns. A significant speed-up in the basecalling step can be achieved by switching to the (hac v4.3.0) models without leading differences in terms of discrimination between methulated and unmethylated reads. This modification can be implemented by adjusting the model specification in the second rule of the *Snakefile*.
+<br/>
+<br/>
+Both pairs of models are provided in the repository and you can find them inside the *data* folder, as well as the hac v4.1.0 models that are required mandatorily in case of older 4kHz input data
