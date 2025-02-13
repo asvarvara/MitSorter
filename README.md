@@ -75,7 +75,7 @@ This workflow generates the following files:
 
 ##  📌  Additional info
 
-MitSorter has been tested on an HPC Cluster platform and requires GPU usage, as the first step of the pipeline, basecalling with [dorado](https://github.com/nanoporetech/dorado) is computationally intensive. We strongly recommend processing one sample at a time. However, it is possible to parallelize the workflow if the personal computing environment  supports multiple GPUs, by simply specifying multiple samples in a list within the *config.yaml* file (e.g. samples = ["HG002", "HG003"]).
+MitSorter has been tested on an HPC Cluster platform and requires GPU usage, as the first step of the pipeline, basecalling with [dorado](https://github.com/nanoporetech/dorado) is computationally intensive. We strongly recommend processing one sample at a time. However, if the personal computing environment  supports multiple GPUs, the workflow can be parallelized the workflow  by simply specifying multiple samples in a list within the *config.yaml* file (e.g. samples = ["HG002", "HG003"]).
 <br/>
 
 Recommended requirements (one sample):
