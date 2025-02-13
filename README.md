@@ -84,11 +84,11 @@ Recommended requirements (one sample):
 + CPUs = 64
 + Memory = 128GB
 
-Tested on the recently released [HG002](https://labs.epi2me.io/giab-2025.01/) Genome In A Bottle sample. Feel free to tweak the settings following your specific needs.
+Tested on the recently released [HG002](https://labs.epi2me.io/giab-2025.01/) Genome In A Bottle sample and is downlodable *via* aws (aws s3 cp s3://ont-open-data/giab_2025.01/flowcells/HG002 ~/HG002/ --recursive --no-sign-request). Feel free to tweak the settings following your specific needs.
 <br/>
 You can specify the number of cores via the *--cores* flag to the snakemake command.
 <br/>
 <br/>
 The workflow uses the latest available version of Dorado for the Conda environment (dorado-0.7.2, https://anaconda.org/HCC/dorado/files) for basecalling, together with the most recent modified basecalling models (sup v5.0.0) to achieve optimal accuracy for following variant calling. However, this configuration may  introduce computational slowdowns. A significant speed-up in the basecalling step can be achieved by switching to the (hac 4.3.0) models without leading   differences in terms of  discrimination between methulated and unmethylated reads. This modification can be implemented by adjusting the model specification in the second rule of the *Snakefile*.
 <br/>
-Both pairs of models are provided in the repo and you can find them inside the *data* folder.
+Both pairs of models are provided in the repository and you can find them inside the *data* folder.
