@@ -46,7 +46,7 @@ MitSorter exclusively accepts ONT raw data in pod5 format. If you have raw data 
 <br/>
 Please note that to be compliant with the workflow structure, it is mandatory to add your pod5 files in a specific folder at this path *"/data/[sample_name]/pod5/"*.
 <br/>
-Subsequently, edit *config.yaml* adding your sample name, which had to be the same one used in the previous path, and you are ready to go.
+Subsequently, edit *config.yaml* to add your sample name, which has to be the same as the one used in the previous path. Once updated, you are ready to start.
 <br/>
 <br/>
 
@@ -89,6 +89,6 @@ Tested on the recently released [HG002](https://labs.epi2me.io/giab-2025.01/) Ge
 You can specify the number of cores via the *--cores* flag to the snakemake command.
 <br/>
 <br/>
-The workflow is designed to use the latest model by dorado in terms of basecalling and modified bases calling (sup v5.0.0) to deliver the most accurate performances, but it can lead to slowdowns of the whole process. In those cases, a sensible speed-up of the basecalling step can be achieved by changing the models to the hac 4.3.0 versions, changing them in the second rule of *Snakefile*.
+The workflow uses the latest available version of Dorado for the Conda environment (dorado-0.7.2, https://anaconda.org/HCC/dorado/files) for basecalling, together with the most recent modified basecalling models (sup v5.0.0) to achieve optimal accuracy for following variant calling. However, this configuration may  introduce computational slowdowns. A significant speed-up in the basecalling step can be achieved by switching to the (hac 4.3.0) models without leading   differences in terms of  discrimination between methulated and unmethylated reads. This modification can be implemented by adjusting the model specification in the second rule of the *Snakefile*.
 <br/>
 Both pairs of models are provided in the repo and you can find them inside the *data* folder.
