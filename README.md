@@ -67,7 +67,7 @@ $ snakemake -n
 ##  📊  Output
 
 This workflow generates the following files:
-- BAM file which includes only not methylated reads, in the *sorted_reads* folder
+- BAM file which includes only non-methylated reads, in the *sorted_reads* folder
 - BAM file which includes only methylated reads, in the *sorted_reads* folder
 - General modified bases statistics regarding methylated BAM, in the *results* folder
 - General modified bases statistics regarding not methylated BAM, in the *results* folder
