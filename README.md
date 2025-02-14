@@ -91,9 +91,9 @@ Tested on the recently released [HG002](https://labs.epi2me.io/giab-2025.01/) Ge
 You can specify the number of cores via the *--cores* flag to the snakemake command.
 <br/>
 <br/>
-The workflow uses the latest available version of Dorado for the Conda environment (dorado-0.7.2, https://anaconda.org/HCC/dorado/files) for basecalling, together with the most recent modified basecalling models (sup v5.0.0) to achieve optimal accuracy for following variant calling. 
+The workflow uses the latest available version of Dorado for the Conda environment (dorado-0.7.2, https://anaconda.org/HCC/dorado/files) for basecalling, together with the most recent modified basecalling models (*sup v5.0.0*) to achieve optimal accuracy for following variant calling. 
 <br/>
-However, this configuration may introduce computational slowdowns. A significant speed-up in the basecalling step can be achieved by switching to the (hac v4.3.0) models without leading differences in terms of discrimination between methulated and unmethylated reads. This modification can be implemented by adjusting the model specification in the second rule of the *Snakefile*.
+However, this configuration may introduce computational slowdowns. A significant speed-up in the basecalling step can be achieved by switching to the *hac v4.3.0* models without leading differences in terms of discrimination between methulated and unmethylated reads. This modification can be implemented by adjusting the model specification in the second rule of the *Snakefile*.
 <br/>
 <br/>
-Both pairs of models are provided in the repository and you can find them inside the *data* folder, as well as the hac v4.1.0 models that are required mandatorily in case of older 4kHz input data
+Both pairs of models are provided in the repository and you can find them inside the *data* folder, as well as the *hac v4.1.0* models that are required mandatorily in case of older 4kHz input data.
