@@ -13,8 +13,16 @@ fi
 echo -e "Read\tTotal_C\tCpG\tHigh_Methyl\tPercent_Methylated_CpG\tTotal_Nucleotides" > "$2"
 output_inf_15=$2
 
+# Finding samtools
+SAMTOOLS_PATH=$(which samtools)
+
+if [ -z "$SAMTOOLS_PATH" ]; then
+    echo "Error: samtools not found"
+    exit 1
+fi
+
 # Analyzing BAM file
-~/miniconda3/envs/snakemake/bin/samtools view "$bam_file" | awk -v inf15="$output_inf_15" '
+$SAMTOOLS_PATH view "$bam_file" | awk -v inf15="$output_inf_15" '
 BEGIN { OFS="\t" }  
 {
     total_C = 0;  
