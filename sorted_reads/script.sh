@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Defining input file
+# Define input file
 bam_file=$1
 
-# Controlla se il file esiste
+# Check if bam file exist
 if [ ! -f "$bam_file" ]; then
     echo "BAM file does not exist."
     exit 1
 fi
 
-# Inizializing output file
+# Initialize output file
 echo -e "Read\tTotal_C\tCpG\tHigh_Methyl\tPercent_Methylated_CpG\tTotal_Nucleotides" > "$2"
 output_inf_15=$2
 
-# Finding samtools
+# Find samtools path
 SAMTOOLS_PATH=$(which samtools)
 
 if [ -z "$SAMTOOLS_PATH" ]; then
@@ -21,7 +21,7 @@ if [ -z "$SAMTOOLS_PATH" ]; then
     exit 1
 fi
 
-# Analyzing BAM file
+# Analyze BAM file and write output file
 $SAMTOOLS_PATH view "$bam_file" | awk -v inf15="$output_inf_15" '
 BEGIN { OFS="\t" }  
 {
