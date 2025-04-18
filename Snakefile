@@ -63,7 +63,7 @@ rule script:
 		"sorted_reads/INF_15_{sample}.txt"
 	message: "Analyzing new BAM file..."
 	shell:
-		"sorted_reads/script.sh {input} {output}"
+		"sorted_reads/CpG_methyl_screen.sh {input} {output}"
 
 rule discriminatemetbam:
 	input:
