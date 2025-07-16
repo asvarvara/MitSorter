@@ -34,7 +34,7 @@ Gain access to the necessary tools by creating a Conda environment using the env
 Then, activate it.
 
 ```
-$ conda create env --name snakemake --file=environment.yaml
+$ conda env create --name snakemake --file=environment.yaml
 $ conda activate snakemake
 ```
 <br/>
