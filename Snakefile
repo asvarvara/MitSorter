@@ -7,8 +7,8 @@ sample = config['samples']
 
 rule all:
     input:
-    	expand("results/calls_sorted_no_unmapped_only_5mC_methylated_{sample}.txt", sample = config["samples"]),
-    	expand("results/calls_sorted_no_unmapped_only_5mC_no_methylated_{sample}.txt", sample = config["samples"])
+    	expand("results/modBAM+m_stats_{sample}.txt", sample = config["samples"]),
+    	expand("results/modBAM-m_stats_{sample}.txt", sample = config["samples"])
 
 rule basecalling:
 	input:
