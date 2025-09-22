@@ -97,3 +97,11 @@ However, this configuration may introduce computational slowdowns. A significant
 <br/>
 <br/>
 Both pairs of models are provided in the repository and you can find them inside the *data* folder, as well as the *hac v4.1.0* models that are required mandatorily in case of older 4kHz input data.
+<br/>
+<br/>
+
+##  📓  Citation
+
+If you use MitSorter in your research or clinical workflow, please cite:
+
+> Sharon Natasha Cox, Angelo Sante Varvara, Graziano Pesole, MitSorter: a standalone tool for accurate discrimination of mtDNA and NuMT ONT reads based on differential methylation, Bioinformatics Advances, Volume 5, Issue 1, 2025, vbaf135, https://doi.org/10.1093/bioadv/vbaf135
